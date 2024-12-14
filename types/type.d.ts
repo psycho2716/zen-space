@@ -1,5 +1,6 @@
 declare interface StatusProps {
     state: "idle" | "loading" | "success" | "error";
+    method?: "default" | "oauth" | "email";
     message: string | null;
 }
 

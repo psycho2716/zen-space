@@ -10,6 +10,8 @@ interface SocialBtnProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     icon: React.ReactNode;
     handleClick: (provider: Provider) => void;
     className?: string;
+    disabled?: boolean;
+    buttonText: string;
 }
 
 const SocialButton = ({
@@ -17,19 +19,23 @@ const SocialButton = ({
     oauthProvider: provider,
     icon,
     handleClick,
-    className
+    className,
+    disabled,
+    buttonText
 }: SocialBtnProps) => {
     return (
         <Button
             variant="outline"
             onClick={() => handleClick(provider)}
-            disabled={isLoading}
+            disabled={disabled}
             className={cn(
-                `w-full dark:bg-transparent dark:text-background dark:hover:bg-[#1DB68A]/70 dark:hover:text-accent-foreground ${className}`
+                `w-full dark:bg-transparent dark:text-background dark:hover:bg-[#1DB68A]/70 dark:hover:text-accent-foreground ${
+                    disabled ? "opacity-60 cursor-disabled" : ""
+                } ${className}`
             )}
         >
             {isLoading ? <Loader /> : icon}
-            Google
+            {buttonText}
         </Button>
     );
 };

@@ -32,6 +32,8 @@ const SocialAuth = ({
                         handleClick={() => handleClick(provider as Provider)}
                         icon={social.icon}
                         isLoading={status?.state === "loading" && selectedProvider === provider}
+                        disabled={status?.state === "loading" && status?.method === "oauth"}
+                        buttonText={social.name}
                     />
                 );
             })}

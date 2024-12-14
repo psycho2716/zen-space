@@ -15,6 +15,7 @@ export default function useSupabaseAuth() {
 
         setStatus({
             state: "loading",
+            method: "email",
             message: "Signing up user..."
         });
 
@@ -25,17 +26,22 @@ export default function useSupabaseAuth() {
                 setErrors(result?.error.errors);
                 setStatus({
                     state: "error",
+                    method: "email",
+
                     message: result?.error.message
                 });
             } else {
                 setStatus({
                     state: "error",
+                    method: "email",
+
                     message: result?.error.message
                 });
             }
         } else {
             setStatus({
                 state: "success",
+                method: "email",
                 message: "User signed up successfully!"
             });
         }
@@ -46,6 +52,7 @@ export default function useSupabaseAuth() {
 
         setStatus({
             state: "loading",
+            method: "email",
             message: "Signing in user..."
         });
 
@@ -56,11 +63,13 @@ export default function useSupabaseAuth() {
                 setErrors(result?.error.errors);
                 setStatus({
                     state: "error",
+                    method: "email",
                     message: result?.error.message
                 });
             } else {
                 setStatus({
                     state: "error",
+                    method: "email",
                     message: result?.error.message
                 });
             }
@@ -69,6 +78,7 @@ export default function useSupabaseAuth() {
         } else {
             setStatus({
                 state: "success",
+                method: "email",
                 message: "User signed in successfully!"
             });
         }
@@ -83,6 +93,7 @@ export default function useSupabaseAuth() {
     const handleUserSocialAuth = async (provider: Provider) => {
         setStatus({
             state: "loading",
+            method: "oauth",
             message: "Signing up user..."
         });
 
@@ -91,6 +102,7 @@ export default function useSupabaseAuth() {
         if (error) {
             setStatus({
                 state: "error",
+                method: "oauth",
                 message: error.message
             });
 

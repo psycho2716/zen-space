@@ -88,7 +88,7 @@ export default function AuthForm({ isSignUp }: { isSignUp?: boolean }) {
                     className="w-full bg-[#20c997] text-white hover:bg-[#20c997]/90"
                     disabled={status?.state === "loading"}
                 >
-                    {status?.state === "loading" && <Loader />}
+                    {status?.state === "loading" && status?.method === "email" && <Loader />}
                     {isSignUp ? "Sign Up" : "Sign In"}
                 </Button>
             </div>
