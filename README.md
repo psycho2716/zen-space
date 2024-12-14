@@ -87,8 +87,8 @@ The app offers the following services:
 Create a `.env` file in the root directory and add the following:
 
 ```env
-NEXT_PUBLIC_GOOGLE_API_KEY=your_google_api_key
-NEXT_PUBLIC_AUTHOR_NAME="Eric John"
+NEXT_PUBLIC_GOOGLE_API_KEY=
+NEXT_PUBLIC_AUTHOR_NAME=
 NEXT_PUBLIC_TAGS_PER_PAGE=
 NEXT_PUBLIC_ENTRIES_PER_PAGE=
 NEXT_PUBLIC_SUPABASE_URL=
