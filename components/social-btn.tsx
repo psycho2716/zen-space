@@ -23,6 +23,7 @@ const SocialButton = ({
         <Button
             variant="outline"
             onClick={() => handleClick(provider)}
+            disabled={isLoading}
             className={cn(
                 `w-full dark:bg-transparent dark:text-background dark:hover:bg-[#1DB68A]/70 dark:hover:text-accent-foreground ${className}`
             )}
