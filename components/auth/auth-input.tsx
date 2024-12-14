@@ -6,15 +6,20 @@ import FormInputError from "../form-input.error";
 interface AuthInputProps extends HTMLAttributes<HTMLInputElement> {
     label: string;
     error?: string | undefined;
+    disabled?: boolean;
 }
 
-const AuthInput = ({ label, error, ...props }: AuthInputProps) => {
+const AuthInput = ({ label, error, disabled = false, ...props }: AuthInputProps) => {
     return (
         <div className="space-y-2">
             <Label htmlFor="email" className="text-foreground dark:text-background capitalize">
                 {label}
             </Label>
-            <Input className="text-foreground dark:text-background" {...props} />
+            <Input
+                className="text-foreground dark:text-background"
+                disabled={disabled}
+                {...props}
+            />
             <FormInputError message={error} />
         </div>
     );

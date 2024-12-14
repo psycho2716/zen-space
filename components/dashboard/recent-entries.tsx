@@ -14,19 +14,25 @@ const RecentEntries = async () => {
                 <h2 className="text-xl font-semibold text-[#20c997] mb-2">Recent Entries</h2>
                 <p className="text-muted-foreground mb-6">Express your thoughts and feelings</p>
                 <div className="space-y-6 mb-6">
-                    {entries.map((entry) => (
-                        <div key={entry.title} className="space-y-2">
-                            <h3 className="font-medium hover:text-[#20c997] transition-colors">
-                                {entry.title}
-                            </h3>
-                            <p className="text-sm text-muted-foreground line-clamp-2">
-                                {entry.content}
-                            </p>
-                            <p className="text-xs text-muted-foreground">
-                                {formatRelativeTime(entry.created_at!)}
-                            </p>
-                        </div>
-                    ))}
+                    {entries.length > 0 ? (
+                        entries.map((entry) => (
+                            <div key={entry.title} className="space-y-2">
+                                <h3 className="font-medium hover:text-[#20c997] transition-colors">
+                                    {entry.title}
+                                </h3>
+                                <p className="text-sm text-muted-foreground line-clamp-2">
+                                    {entry.content}
+                                </p>
+                                <p className="text-xs text-muted-foreground">
+                                    {formatRelativeTime(entry.created_at!)}
+                                </p>
+                            </div>
+                        ))
+                    ) : (
+                        <p className="text-sm text-muted-foreground">
+                            No recent entries available.
+                        </p>
+                    )}
                 </div>
             </div>
 

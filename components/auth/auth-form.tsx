@@ -63,6 +63,7 @@ export default function AuthForm({ isSignUp }: { isSignUp?: boolean }) {
                                           errors?.find((error) => error.field === input.name)
                                               ?.message
                                       }
+                                      disabled={status?.state === "loading"}
                                       {...input}
                                   />
                               ) : null
@@ -76,6 +77,7 @@ export default function AuthForm({ isSignUp }: { isSignUp?: boolean }) {
                                   error={
                                       errors?.find((error) => error.field === input.name)?.message
                                   }
+                                  disabled={status?.state === "loading"}
                                   {...input}
                               />
                           ))}
