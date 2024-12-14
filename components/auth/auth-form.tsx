@@ -9,6 +9,7 @@ import AuthInput from "./auth-input";
 import { authInputs } from "@/data/authInputs";
 import { UserProps } from "@/lib/schemas";
 import { FormAlert } from "../ui/form-alert";
+import Loader from "../ui/loader";
 
 interface FormValues {
     [key: string]: string;
@@ -83,7 +84,9 @@ export default function AuthForm({ isSignUp }: { isSignUp?: boolean }) {
                 <Button
                     onClick={handleSubmit}
                     className="w-full bg-[#20c997] text-white hover:bg-[#20c997]/90"
+                    disabled={status?.state === "loading"}
                 >
+                    {status?.state === "loading" && <Loader />}
                     {isSignUp ? "Sign Up" : "Sign In"}
                 </Button>
             </div>
