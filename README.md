@@ -40,19 +40,19 @@ The app offers the following services:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/zenspace.git
+    git clone https://github.com/psycho2716/zen-space.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd zenspace
+    cd zen-space
     ```
 
 3. Install dependencies:
 
     ```bash
-    npm install
+    npm install --force
     ```
 
 4. Start the development server:
@@ -65,10 +65,11 @@ The app offers the following services:
 
 ## Tech Stack
 
--   **Frontend**: React, Tailwind CSS
+-   **Frontend**: NextJS, Tailwind CSS, Shadcn
 -   **State Management**: Zustand
--   **Backend Services**: YouTube API, Google Cloud Functions
+-   **Backend Services**: YouTube API, Supabase
 -   **Charts**: Chart.js
+-   **AI Integration**: ChatGPT
 -   **UI Components**: Custom and third-party libraries
 
 ## Usage
@@ -87,18 +88,32 @@ Create a `.env` file in the root directory and add the following:
 
 ```env
 NEXT_PUBLIC_GOOGLE_API_KEY=your_google_api_key
+NEXT_PUBLIC_AUTHOR_NAME="Eric John"
+NEXT_PUBLIC_TAGS_PER_PAGE=
+NEXT_PUBLIC_ENTRIES_PER_PAGE=
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+NEXT_PUBLIC_YOUTUBE_API_KEY=
+NEXT_PUBLIC_OPENAI_API_KEY=
+NEXT_PUBLIC_LINKEDIN_URL=
+NEXT_PUBLIC_GITHUB_URL=
+NEXT_PUBLIC_FACEBOOK_URL=
+NEXT_PUBLIC_YOUTUBE_URL=
 ```
 
 ### File Structure
 
 ```bash
-zenspace/
+zen-space/
 ├── components/      # Reusable UI components
-├── pages/           # Next.js pages
+├── app/             # Application-specific logic
 ├── store/           # Zustand store for state management
 ├── actions/         # API calls and server actions
-├── styles/          # Global and component-specific styles
-└── utils/           # Utility functions
+├── hooks/           # Custom React hooks
+├── providers/       # Application-wide context providers
+├── data/            # Static and dynamic data sources
+├── lib/             # Utility libraries and helpers
+└── utils/           # General utility functions
 ```
 
 ### Running Tests
