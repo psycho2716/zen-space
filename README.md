@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ZenSpace
 
-## Getting Started
+## About
 
-First, run the development server:
+**ZenSpace** is a powerful tool designed to help you monitor, analyze, and improve your emotional well-being. With an intuitive interface and features tailored for mindfulness and self-care, this app empowers users to gain better insights into their emotions and adopt healthier habits.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Features
+
+### 1. Mood Tracking
+
+Log your daily moods effortlessly and keep track of your emotional health over time.
+
+### 2. Mood Visualization
+
+View your mood trends and distributions through vibrant and interactive charts.
+
+### 3. Mood Analysis
+
+Identify patterns in your emotional state and uncover insights to improve your mental well-being.
+
+### 4. Video Recommendations
+
+Access curated videos designed to uplift your mood and provide mental health support.
+
+## Services
+
+The app offers the following services:
+
+-   **Mood Tracking**: Log and track your emotions daily.  
+    _Icon: 😊_
+-   **Mood Visualization**: See your mood trends with detailed charts.  
+    _Icon: 📊_
+-   **Mood Analysis**: Gain insights into patterns and emotional triggers.  
+    _Icon: 📈_
+-   **Video Recommendations**: Watch curated videos to improve your mental health.  
+    _Icon: 🎥_
+
+## Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/your-username/zenspace.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd zenspace
+    ```
+
+3. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+
+4. Start the development server:
+
+    ```bash
+    npm run dev
+    ```
+
+5. Open the app in your browser at `http://localhost:3000`.
+
+## Tech Stack
+
+-   **Frontend**: React, Tailwind CSS
+-   **State Management**: Zustand
+-   **Backend Services**: YouTube API, Google Cloud Functions
+-   **Charts**: Chart.js
+-   **UI Components**: Custom and third-party libraries
+
+## Usage
+
+1. Log in to access the app.
+2. Start tracking your daily mood using the "Mood Tracking" feature.
+3. View your emotional trends in the "Mood Visualization" section.
+4. Analyze your mood patterns through "Mood Analysis."
+5. Watch recommended videos in the "Video Recommendations" section to uplift your spirit.
+
+## Development
+
+### Environment Variables
+
+Create a `.env` file in the root directory and add the following:
+
+```env
+NEXT_PUBLIC_GOOGLE_API_KEY=your_google_api_key
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### File Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+zenspace/
+├── components/      # Reusable UI components
+├── pages/           # Next.js pages
+├── store/           # Zustand store for state management
+├── actions/         # API calls and server actions
+├── styles/          # Global and component-specific styles
+└── utils/           # Utility functions
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Running Tests
 
-## Learn More
+Run tests using:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run test
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+We welcome contributions! Feel free to submit issues or pull requests. Make sure to follow the guidelines in `CONTRIBUTING.md`.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License. See the `LICENSE` file for details.

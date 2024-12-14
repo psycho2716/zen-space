@@ -2,20 +2,131 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 222.2 84% 4.9%;
+
+        --card: 0 0% 100%;
+        --card-foreground: 222.2 84% 4.9%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 222.2 84% 4.9%;
+
+        --primary: 160 84% 39%; /* #20c997 */
+        --primary-foreground: 0 0% 100%;
+
+        --secondary: 235 84% 59%; /* #4263eb */
+        --secondary-foreground: 0 0% 100%;
+
+        --accent: 262 84% 63%; /* #7950f2 */
+        --accent-foreground: 0 0% 100%;
+
+        --muted: 210 40% 96.1%;
+        --muted-foreground: 215.4 16.3% 46.9%;
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 210 40% 98%;
+
+        --border: 214.3 31.8% 91.4%;
+        --input: 214.3 31.8% 91.4%;
+        --ring: 222.2 84% 4.9%;
+
+        --radius: 1rem;
+
+        --mood-selected: 35 92% 65%; /* Orange/yellow for selected mood */
+    }
+
+    .dark {
+        --background: 222.2 84% 4.9%;
+        --foreground: 210 40% 98%;
+
+        --card: 222.2 84% 4.9%;
+        --card-foreground: 210 40% 98%;
+
+        --popover: 222.2 84% 4.9%;
+        --popover-foreground: 210 40% 98%;
+
+        --primary: 160 84% 39%;
+        --primary-foreground: 0 0% 100%;
+
+        --secondary: 235 84% 59%;
+        --secondary-foreground: 0 0% 100%;
+
+        --accent: 262 84% 63%;
+        --accent-foreground: 0 0% 100%;
+
+        --muted: 217.2 32.6% 17.5%;
+        --muted-foreground: 215 20.2% 65.1%;
+
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 210 40% 98%;
+
+        --border: 217.2 32.6% 17.5%;
+        --input: 217.2 32.6% 17.5%;
+        --ring: 212.7 26.8% 83.9%;
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.gradient-banner {
+    @apply rounded-3xl overflow-hidden;
+    background: linear-gradient(115deg, #20c997 0%, #4263eb 50%, #7950f2 100%);
+}
+
+.mood-button {
+    @apply flex flex-col items-center justify-center p-4 rounded-xl transition-all duration-200 hover:bg-muted/50;
+}
+
+.mood-button.selected {
+    @apply bg-[#ffa94d] text-white;
+}
+
+.floating-card {
+    @apply bg-[#fdfdfd] rounded-3xl shadow-[0_2px_8px_rgba(0,0,0,0.1)] overflow-hidden;
+}
+
+/* Mood Backgrounds */
+.gradient-happy {
+    @apply from-yellow-500 to-orange-500;
+}
+
+.gradient-calm {
+    @apply from-blue-500 to-cyan-500;
+}
+
+.gradient-neutral {
+    @apply from-gray-500 to-slate-500;
+}
+
+.gradient-anxious {
+    @apply from-purple-500 to-pink-500;
+}
+
+.gradient-sad {
+    @apply from-indigo-500 to-blue-500;
+}
+
+.gradient-excited {
+    @apply from-pink-500 to-blue-500;
+}
+
+.gradient-angry {
+    @apply from-red-700 to-amber-700;
+}
+
+.gradient-tired {
+    @apply from-slate-400 to-slate-700;
+}
+
+.gradient-inspired {
+    @apply from-amber-500 to-rose-500;
 }
