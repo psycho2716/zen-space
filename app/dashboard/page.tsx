@@ -19,7 +19,8 @@ const DashboardPage = async () => {
             <div className="gradient-banner">
                 <div className="px-8 py-12">
                     <h1 className="text-4xl font-bold text-white mb-4 capitalize">
-                        Welcome Back {user?.user_metadata.full_name}!
+                        Welcome Back
+                        {user?.user_metadata.full_name ? `, ${user.user_metadata.full_name}!` : "!"}
                     </h1>
                     <p className="text-white/90 text-lg">
                         Track your mood, explore curated resources, and embrace positivity with
