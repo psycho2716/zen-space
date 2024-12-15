@@ -7,8 +7,11 @@ import { ThemeProvider } from "@/providers/theme.provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "zenSpace",
-    description: "Your mental well being is our priority"
+    title: "ZenSpace",
+    description: "Your all in one place to manage your mental health, and track your daily moods.",
+    icons: {
+        icon: "/favicon.ico"
+    }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
