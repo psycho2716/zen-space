@@ -9,7 +9,7 @@ const HeroSection = ({
     className?: string;
 }) => {
     return (
-        <section className={cn(`relative pt-32 pb-40 px-4`, className)}>
+        <section className={cn(`relative pt-36 pb-40 px-4`, className)}>
             <div className="bg-white bg-opacity-75 py-12 rounded-3xl shadow-xl">{children}</div>
         </section>
     );
