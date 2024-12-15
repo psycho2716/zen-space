@@ -1,5 +1,7 @@
 # ZenSpace
 
+![ZenSpace Cover](https://example.com/cover-image.png "ZenSpace Cover Image")
+
 ## About
 
 **ZenSpace** is a powerful tool designed to help you monitor, analyze, and improve your emotional well-being. With an intuitive interface and features tailored for mindfulness and self-care, this app empowers users to gain better insights into their emotions and adopt healthier habits.
