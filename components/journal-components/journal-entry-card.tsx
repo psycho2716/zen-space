@@ -44,7 +44,7 @@ const JournalEntryCard = ({ entry, className }: JournalEntryCardProps) => {
             </CardHeader>
             <CardContent className="flex-grow flex flex-col justify-between">
                 <p className="text-muted-foreground text-sm line-clamp-3 mb-4">{content}</p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-7">
                     {entryTags.map((tag: string, index: number) => (
                         <Badge
                             key={index}
