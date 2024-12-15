@@ -1,6 +1,6 @@
 # ZenSpace
 
-![ZenSpace Cover](https://example.com/cover-image.png "ZenSpace Cover Image")
+![ZenSpace Cover](https://raw.githubusercontent.com/psycho2716/zen-space/refs/heads/main/Project%20Cover.png "ZenSpace Cover Image")
 
 ## About
 
