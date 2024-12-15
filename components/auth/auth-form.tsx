@@ -20,6 +20,8 @@ export default function AuthForm({ isSignUp }: { isSignUp?: boolean }) {
         useSupabaseAuth();
     const [formValues, setFormValues] = useState<FormValues>({});
 
+    const [passwordVisibility, setPasswordVisibility] = useState<boolean>(false);
+
     const handleInputChange = (name: string, value: string) => {
         setFormValues((prevValues) => ({
             ...prevValues,
@@ -33,6 +35,12 @@ export default function AuthForm({ isSignUp }: { isSignUp?: boolean }) {
             await handleUserSignUp(formValues as UserProps);
         } else {
             await handleUserSignIn(formValues as UserProps);
+        }
+    };
+
+    const handlePasswordVisibility = (type: string, name: string) => {
+        if (type === "password" && name === "password") {
+            setPasswordVisibility((prev) => !prev);
         }
     };
 
@@ -64,7 +72,22 @@ export default function AuthForm({ isSignUp }: { isSignUp?: boolean }) {
                                               ?.message
                                       }
                                       disabled={status?.state === "loading"}
-                                      {...input}
+                                      label={input.label}
+                                      name={input.name}
+                                      type={
+                                          input.name === "password" ||
+                                          input.name === "confirmPassword"
+                                              ? passwordVisibility
+                                                  ? "text"
+                                                  : "password"
+                                              : input.type
+                                      }
+                                      placeholder={input.placeholder}
+                                      required={input.required}
+                                      onIconClick={() =>
+                                          handlePasswordVisibility(input.type, input.name)
+                                      }
+                                      passwordVisibility={passwordVisibility}
                                   />
                               ) : null
                           )
@@ -78,7 +101,21 @@ export default function AuthForm({ isSignUp }: { isSignUp?: boolean }) {
                                       errors?.find((error) => error.field === input.name)?.message
                                   }
                                   disabled={status?.state === "loading"}
-                                  {...input}
+                                  label={input.label}
+                                  name={input.name}
+                                  type={
+                                      input.name === "password" || input.name === "confirmPassword"
+                                          ? passwordVisibility
+                                              ? "text"
+                                              : "password"
+                                          : input.type
+                                  }
+                                  placeholder={input.placeholder}
+                                  required={input.required}
+                                  onIconClick={() =>
+                                      handlePasswordVisibility(input.type, input.name)
+                                  }
+                                  passwordVisibility={passwordVisibility}
                               />
                           ))}
                 </div>
