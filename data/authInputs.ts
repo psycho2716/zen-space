@@ -17,7 +17,7 @@ export const authInputs = [
         label: "Confirm Password",
         name: "confirmPassword",
         type: "password",
-        placeholder: "Please confirm your password",
+        placeholder: "Confirm your password",
         required: true
     }
 ];
