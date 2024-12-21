@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navigation/navbar";
 import { ThemeProvider } from "@/providers/theme.provider";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 >
                     <Navbar />
                     {children}
+                    <SpeedInsights />
                 </ThemeProvider>
             </body>
         </html>
